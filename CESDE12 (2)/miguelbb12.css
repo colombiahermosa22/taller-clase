@@ -1,0 +1,183 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.perfil{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+    width: 800px;
+    max-width: 100%;
+    padding: 25px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.foto img{
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #0099ff;
+    animation: girarEntrada 2.5s infinite;
+}
+
+@keyframes girarEntrada{
+    0%{
+        transform: rotate(-360deg) scale(0);
+        opacity: 0;
+    }
+
+    100%{
+        transform: rotate(0deg) scale(1);
+        opacity: 1;
+    }
+}
+
+.datos{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.datos h1{
+    color: #0099ff;
+    margin-bottom: 10px;
+    font-size: 32px;
+    opacity: 0;
+    animation: aparecerTitulo 2.5s infinite forwards;
+}
+
+@keyframes aparecerTitulo{
+    from{
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.datos p{
+    font-size: 16px;
+    color: #333;
+    line-height: 1.5;
+    opacity: 0;
+    animation: entrarTexto 2.5s infinite forwards;
+}
+
+@keyframes entrarTexto{
+    from{
+        opacity: 0;
+        transform: translateX(-250px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.btn{
+    width: 150px;
+    padding: 12px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 8px;
+    background-color: #0099ff;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+    opacity: 0;
+    animation: aparecerBoton 2s ease forwards;
+}
+
+@keyframes aparecerBoton{
+    from{
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.btn:hover{
+    background-color: #0077cc;
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px){
+
+    .perfil{
+        flex-direction: column;
+        width: 95%;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .foto img{
+        width: 180px;
+        height: 180px;
+    }
+
+    .datos{
+        align-items: center;
+    }
+
+    .datos h1{
+        font-size: 28px;
+    }
+
+    .datos p{
+        font-size: 15px;
+    }
+
+    .btn{
+        width: 180px;
+    }
+}
+
+@media (max-width: 480px){
+
+    .perfil{
+        padding: 15px;
+    }
+
+    .foto img{
+        width: 150px;
+        height: 150px;
+    }
+
+    .datos h1{
+        font-size: 24px;
+    }
+
+    .datos p{
+        font-size: 14px;
+    }
+
+    .btn{
+        width: 100%;
+        max-width: 220px;
+    }
+}

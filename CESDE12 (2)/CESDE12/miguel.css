@@ -1,0 +1,139 @@
+:root {
+    /* COLORES MODERNOS */
+    --color-titulo: #ffffff;      
+    --color-subtitulo: #00d2ff;   
+    --color-boton: #3a7bd5;       
+    --color-boton-hover: #00d2ff; 
+    --bg-ticker: #000000;
+    --texto-ticker: #00d2ff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #050505; /* Fondo oscuro para que resalte la imagen */
+    overflow-x: hidden;
+}
+
+/* --- BARRA DE TEXTO INFINITO (SUPERIOR) --- */
+.barra-animada {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: var(--bg-ticker);
+    color: var(--texto-ticker);
+    padding: 10px 0;
+    z-index: 1000;
+    border-bottom: 2px solid var(--color-boton);
+    overflow: hidden;
+    display: flex;
+}
+
+.texto-infinito {
+    display: flex;
+    white-space: nowrap;
+    animation: correrTexto 15s linear infinite;
+}
+
+.texto-infinito span {
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding-right: 50px; /* Espacio entre frases */
+    letter-spacing: 2px;
+}
+
+@keyframes correrTexto {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* --- CONTENEDOR PRINCIPAL --- */
+/* --- CONTENEDOR PRINCIPAL --- */
+.contenedor-pro {
+    position: relative;
+    width: 100%;
+    height: 100vh; 
+    display: flex;
+    align-items: flex-start; /* Cambio de center a flex-start */
+    justify-content: center;
+    text-align: center;
+    padding-top: 120px; /* Ajusta este valor (120px, 100px, etc.) para subir o bajar la tarjeta */
+}
+.contenedor-pro::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('sistemas.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 1; /* Ajustado para que el degradado controle la visibilidad */
+    z-index: -1;
+}
+
+/* --- ESTILOS DE TEXTO --- */
+.contenedor-pro h1 {
+    font-size: 4rem;
+    color: var(--color-titulo);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    text-shadow: 0 0 20px rgba(0, 210, 255, 0.5); /* Efecto Neón */
+    font-weight: 900;
+}
+
+.contenedor-pro p {
+    font-size: 1.8rem;
+    color: var(--color-subtitulo);
+    margin-bottom: 35px;
+    font-weight: 300;
+    letter-spacing: 5px;
+}
+
+/* --- BOTÓN MEJORADO --- */
+.boton-bonito {
+    background: linear-gradient(45deg, var(--color-boton), var(--color-boton-hover));
+    color: white;
+    padding: 18px 45px;
+    text-decoration: none;
+    border-radius: 12px; /* Menos redondeado para verse más moderno */
+    font-weight: bold;
+    display: inline-block;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.boton-bonito:hover {
+    transform: scale(1.1) translateY(-5px);
+    box-shadow: 0 15px 25px rgba(0, 210, 255, 0.4);
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    max-width: 600px;
+    
+    /* Añade esta línea si quieres subirla sin cambiar el contenedor */
+    transform: translateY(-20px); 
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+    .contenedor-pro h1 { font-size: 2.5rem; }
+    .contenedor-pro p { font-size: 1.2rem; letter-spacing: 2px; }
+    .texto-infinito span { font-size: 0.7rem; }
+}
+

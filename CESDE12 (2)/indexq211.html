@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>enlaces HTML</title>
+    <link rel="stylesheet" href="miguelq211.css">
+</head>
+<body>
+    <a href="indexq11.html" class="boton">ir a la pagina de animacion</a>
+    
+    <button id="miboton">Ir a otra pagina</button>
+
+    <nav>
+        <ul class="sin-puntos">
+          <li><a href="index21.html" class="boton">index21</a></li>
+          <li><a href="index8.html" class="boton">index8</a></li>
+          <li><a href="index.html" class="boton">index</a></li>
+        </ul>
+    </nav>
+    <script>
+        document.getElementById("miboton").addEventListener("click", function (){
+            window.location.href = "indexq11.html";
+        })
+    </script>
+</body>
+</html>

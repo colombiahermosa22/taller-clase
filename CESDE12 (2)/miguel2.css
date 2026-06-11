@@ -1,0 +1,134 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Fondo general */
+body {
+  background: #0f172a;
+  color: #f1f5f9;
+  line-height: 1.6;
+}
+
+/* Encabezado */
+.header {
+  text-align: center;
+  padding: 20px;
+  background: #1e293b;
+  border-bottom: 2px solid #38bdf8;
+}
+
+.header h1 {
+  font-size: 2rem;
+}
+
+/* Contenedor */
+.container {
+  width: 90%;
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* Secciones */
+section {
+  margin-bottom: 40px;
+}
+
+h2 {
+  margin-bottom: 15px;
+  color: #38bdf8;
+}
+
+/* Galería de imágenes */
+.gallery {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.gallery img {
+  width: 250px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 2px solid #334155;
+  transition: transform 0.3s;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* Audio y video */
+audio, video {
+  width: 100%;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+
+/* YouTube responsive */
+.video-responsive {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.video-responsive iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 15px;
+  background: #1e293b;
+  margin-top: 20px;
+}
+.tabla {
+    width: 60%;
+    margin: 30px auto;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Encabezado */
+.tabla thead {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* Celdas */
+.tabla th,
+.tabla td {
+    padding: 12px 15px;
+    text-align: left;
+}
+
+/* Filas */
+.tabla tbody tr {
+    border-bottom: 1px solid #ddd;
+}
+
+/* Efecto hover */
+.tabla tbody tr:hover {
+    background-color: #f1f1f1;
+    transition: 0.3s;
+}
+
+/* Filas alternas */
+.tabla tbody tr:nth-child(even) {
+    background-color: #fafafa;
+}
